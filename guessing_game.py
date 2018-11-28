@@ -13,6 +13,11 @@ import random
 
 
 def start_game():
+    print("""
+    ._______________________.
+    |_____Welcome to my_____|
+    |_Number Guessing Game!_|
+    |_______________________|""")
 
 
 if __name__ == '__main__':
