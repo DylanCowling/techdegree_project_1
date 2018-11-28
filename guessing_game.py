@@ -30,6 +30,10 @@ def start_game():
             print("Too high!")
         player_guess = int(input("Please try again:  "))
         guesses.append(player_guess)
+    print("Congratulations! You won in {} guesses.".format(len(guesses)))
+    play_again = input("Would you like to play again? (Y/N)  ").lower()
+    if play_again == "y":
+        start_game()
 
 
 
