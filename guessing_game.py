@@ -19,10 +19,13 @@ def start_game():
     |_____Welcome to my_____|
     |_Number Guessing Game!_|
     |_______________________|""")
+
     random_num = random.randint(1, 25)
     guesses = []
+
     player_guess = int(input("\nGuess a number between 1 and 25:  "))
     guesses.append(player_guess)
+
     while player_guess != random_num:
         #print(len(guesses))
         if player_guess < random_num:
@@ -31,6 +34,7 @@ def start_game():
             print("Too high!")
         player_guess = int(input("Please try again:  "))
         guesses.append(player_guess)
+
     print("\nCongratulations! You won in {} guesses.".format(len(guesses)))
     play_again = input("\nWould you like to play again? (Y/N)  ").lower()
     if play_again == "y":
