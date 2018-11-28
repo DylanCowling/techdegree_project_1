@@ -18,6 +18,9 @@ def start_game():
     |_____Welcome to my_____|
     |_Number Guessing Game!_|
     |_______________________|""")
+    random_num = random.randint(1, 25)
+    attempt_count = 1
+    player_guess = int(input("Guess a number between 1 and 25:  "))
 
 
 if __name__ == '__main__':
