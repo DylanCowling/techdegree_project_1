@@ -19,8 +19,10 @@ def start_game():
     |_Number Guessing Game!_|
     |_______________________|""")
     random_num = random.randint(1, 25)
-    attempt_count = 1
+    guesses = []
     player_guess = int(input("Guess a number between 1 and 25:  "))
+    while player_guess != random_num:
+        player_guess = int(input("Incorrect! Try again...  "))
 
 
 if __name__ == '__main__':
