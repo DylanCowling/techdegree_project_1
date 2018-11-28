@@ -2,6 +2,8 @@ import random
 
 
 # TODO: Create separate "def" for highscore and put the main game within that as to save highscores between games.
+# TODO: Make sure your script runs without errors. Catch exceptions and report errors to the user in a meaningful way.
+# TODO: Make sure the player can try again if they guess outside of the number range.
 
 
 def start_game():
