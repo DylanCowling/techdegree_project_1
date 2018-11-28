@@ -11,6 +11,7 @@ import random
 #      and show how many attempts it took them to get the correct number.
 # 5. Let the player know the game is ending, or something that indicates the game is over.
 
+# TODO: Create seperate "def" for highscore and put the main game within that as to save highscores between games.
 
 def start_game():
     print("""
@@ -18,7 +19,7 @@ def start_game():
     |_____Welcome to my_____|
     |_Number Guessing Game!_|
     |_______________________|""")
-    random_num = random.randint(1, 10)
+    random_num = random.randint(1, 25)
     guesses = []
     player_guess = int(input("\nGuess a number between 1 and 25:  "))
     guesses.append(player_guess)
@@ -30,8 +31,8 @@ def start_game():
             print("Too high!")
         player_guess = int(input("Please try again:  "))
         guesses.append(player_guess)
-    print("Congratulations! You won in {} guesses.".format(len(guesses)))
-    play_again = input("Would you like to play again? (Y/N)  ").lower()
+    print("\nCongratulations! You won in {} guesses.".format(len(guesses)))
+    play_again = input("\nWould you like to play again? (Y/N)  ").lower()
     if play_again == "y":
         start_game()
 
