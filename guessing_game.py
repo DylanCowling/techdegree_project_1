@@ -20,17 +20,20 @@ def start_game():
     |_______________________|""")
     random_num = random.randint(1, 10)
     guesses = []
-    player_guess = int(input("Guess a number between 1 and 25:  "))
+    player_guess = int(input("\nGuess a number between 1 and 25:  "))
     guesses.append(player_guess)
     while player_guess != random_num:
         #print(len(guesses))
-        player_guess = int(input("Incorrect! Try again...  "))
+        if player_guess < random_num:
+            print("Too low!")
+        elif player_guess > random_num:
+            print("Too high!")
+        player_guess = int(input("Please try again:  "))
         guesses.append(player_guess)
 
 
 
 
-#start_game()
 
 if __name__ == '__main__':
     # Kick off the program by calling the start_game function.
