@@ -1,11 +1,12 @@
 import random
 
 
-# TODO: Create separate "def" for highscore and put the main game within that as to save highscores between games.
+# TODO: Create highscore to be shown at the start of the game and save between games.
 # TODO: Make sure your script runs without errors. Catch exceptions and report errors to the user in a meaningful way.
 
 
 def start_game():
+    highscore = 25
     # Display an intro/welcome message to the player.
     print("""
     ._______________________.
@@ -19,7 +20,7 @@ def start_game():
 
     player_guess = int(input("\nGuess a number between 1 and 25:  "))
     guesses.append(player_guess)
-    # 3. Continuously prompt the player for a guess.
+    # Continuously prompt the player for a guess.
     while player_guess != random_num:
         # Make sure the player can try again if they guess outside of the number range.
         if player_guess > 25 or player_guess < 1:
@@ -34,13 +35,17 @@ def start_game():
                 print("Too high!")
             player_guess = int(input("Please try again:  "))
             guesses.append(player_guess)
-
     # Once the guess is correct, stop looping, inform the user they "Got it"
     # and show how many attempts it took them to get the correct number.
+    if len(guesses) < highscore:
+        highscore = len(guesses)
     print("\nCongratulations! You got it in {} guesses.".format(len(guesses)))
     # Let the player know the game is ending, or something that indicates the game is over.
     play_again = input("\nGame Over. Would you like to play again? (Y/N)  ").lower()
     if play_again == "y":
+        print("""
+         __________________________
+        The current highscore is: {}""".format(highscore))
         start_game()
 
 
