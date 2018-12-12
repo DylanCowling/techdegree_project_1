@@ -38,9 +38,9 @@ def start_game():
         # and show how many attempts it took them to get the correct number.
         print("\nCongratulations! You got it in {} guesses.".format(len(guesses)))
         # Let the player know the game is ending, or something that indicates the game is over.
-        play_again = input("\nGame Over. Would you like to play again? (Y/N)  ").lower()
-        if play_again == "y":
-            start_game()
+    play_again = input("\nWould you like to play again? (Y/N)  ").lower()
+    if play_again == "y":
+        start_game()
 
 
 if __name__ == '__main__':
